@@ -17,7 +17,7 @@ install:
 
 script:
   - yarn build --prod --base-href https://jefiozie.github.io
-  - ngh --dir=dist/PersonalBlog --branch=master --repo=$GITHUB_ORG/jefiozie.github.io.git
+  - ngh --dir=dist/PersonalBlog --branch=master --repo=$GITHUB_ORG/jefiozie.github.io.git  --name="$Name" --email="$Email"
 
 branches:
   only:
