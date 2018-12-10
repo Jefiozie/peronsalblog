@@ -1,0 +1,24 @@
+language: node_js
+
+node_js:
+  - 9.2.0
+
+cache:
+  directories:
+    - node_modules
+
+env:
+  global:
+    - GITHUB_ORG="https://$GITHUB_TOKEN@github.com/Jefiozie"
+    - GITHUB_NAME="GH-Bot"
+    - GITHUB_EMAIL="GH-Bot@noreply.com"
+install:
+  - npm i --silent
+
+script:
+  - yarn build --prod --base-href https://jefiozie.github.io
+  - ngh --dir=dist/PersonalBlog --branch=master --repo=$GITHUB_ORG/jefiozie.github.io.git
+
+branches:
+  only:
+    - master
