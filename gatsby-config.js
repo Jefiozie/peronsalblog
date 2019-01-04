@@ -59,10 +59,10 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Blog - Jeffrey`,
-        short_name: `Personal Blog`,
+        short_name: `Blog of Jeffrey`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#ffa7c4`,
+        theme_color: `#2bbc8a`,
         display: `minimal-ui`,
         icon: `content/assets/favicon-96x96.png`,
       },
