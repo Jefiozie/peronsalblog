@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Footer from '../components/Footer'
 
 import { rhythm, scale } from '../utils/typography'
 
@@ -62,14 +63,7 @@ class Layout extends React.Component {
         }}
       >
         {header}
-        {children}
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <span  style={{
-              color: `#e74c3c`,
-            }}>&#9829;</span>
-        </footer>
+        {children} <Footer />
       </div>
     )
   }
