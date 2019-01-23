@@ -7,6 +7,7 @@ Today I had some problems with CSS grid and IE support. After some digging, I fo
 [This issue](https://github.com/angular/angular-cli/pull/11453) explains why grid support by default is off.
 
 You should enable it by using:
-```css 
+
+```css
 /* autoprefixer grid: on */
 ```

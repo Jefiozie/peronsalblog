@@ -28,7 +28,8 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in the Netherlands.
+              Written by <strong>{author}</strong> who lives and works in the
+              Netherlands.
             </p>
           </div>
         )

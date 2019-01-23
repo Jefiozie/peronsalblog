@@ -13,7 +13,7 @@ class Footer extends React.Component {
         <div style={{ float: 'right' }}>
           <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
             <i
-              class="fas fa-rss-square"
+              className="fas fa-rss-square"
               style={{
                 color: 'black',
               }}
@@ -26,7 +26,7 @@ class Footer extends React.Component {
           rel="noopener noreferrer"
         >
           <i
-            class="fab fa-twitter"
+            className="fab fa-twitter"
             style={{
               color: 'black',
             }}
@@ -39,7 +39,7 @@ class Footer extends React.Component {
           rel="noopener noreferrer"
         >
           <i
-            class="fab fa-github"
+            className="fab fa-github"
             style={{
               color: 'black',
             }}
@@ -53,7 +53,7 @@ class Footer extends React.Component {
           rel="noopener noreferrer"
         >
           <i
-            class="fab fa-stack-overflow"
+            className="fab fa-stack-overflow"
             style={{
               color: 'black',
             }}

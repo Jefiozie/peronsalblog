@@ -26,7 +26,7 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
           {` `}
-          <i class="far fa-clock" />
+          <i className="far fa-clock" />
           {` - ${post.timeToRead} min read`}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
