@@ -1,15 +1,20 @@
-import React from 'react'
+import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
+import React from 'react'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ meta, image, title, keywords, lang, description, slug }) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
+        const metaImage = image
+          ? `${data.site.siteMetadata.siteUrl}/${image}`
+          : null
+        const url = `${data.site.siteMetadata.siteUrl}${slug}`
+
         return (
           <Helmet
             htmlAttributes={{
@@ -22,6 +27,7 @@ function SEO({ description, lang, meta, keywords, title }) {
                 name: `description`,
                 content: metaDescription,
               },
+              { property: 'og:url', content: url },
               {
                 property: `og:title`,
                 content: title,
@@ -59,6 +65,20 @@ function SEO({ description, lang, meta, keywords, title }) {
                     }
                   : []
               )
+              .concat(
+                metaImage
+                  ? [
+                      {
+                        property: 'og:image',
+                        content: metaImage,
+                      },
+                      {
+                        name: 'twitter:image',
+                        content: metaImage,
+                      },
+                    ]
+                  : []
+              )
               .concat(meta)}
           >
             <link
@@ -78,14 +98,17 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
+  slug: '',
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
+  image: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  slug: PropTypes.string,
 }
 
 export default SEO
@@ -95,8 +118,12 @@ const detailsQuery = graphql`
     site {
       siteMetadata {
         title
-        description
         author
+        description
+        siteUrl
+        social {
+          twitter
+        }
       }
     }
   }
