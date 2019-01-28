@@ -51,6 +51,13 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -64,21 +71,14 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Blog - Jeffrey`,
-        short_name: `Blog of Jeffrey`,
+        short_name: `Blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#2bbc8a`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `content/assets/favicon-96x96.png`,
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
   ],
 }

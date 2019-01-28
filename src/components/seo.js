@@ -99,6 +99,7 @@ SEO.defaultProps = {
   meta: [],
   keywords: [],
   slug: '',
+  title: '',
 }
 
 SEO.propTypes = {
