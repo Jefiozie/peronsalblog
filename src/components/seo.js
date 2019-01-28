@@ -1,7 +1,7 @@
-import { graphql, StaticQuery } from 'gatsby';
-import PropTypes from 'prop-types';
-import React from 'react';
-import Helmet from 'react-helmet';
+import { graphql, StaticQuery } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import Helmet from 'react-helmet'
 
 function SEO({ meta, image, title, keywords, lang, description, slug }) {
   return (
@@ -14,7 +14,6 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
           ? `${data.site.siteMetadata.siteUrl}/${image}`
           : null
         const url = `${data.site.siteMetadata.siteUrl}${slug}`
-        console.error({ data })
 
         return (
           <Helmet
