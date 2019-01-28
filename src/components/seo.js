@@ -10,11 +10,12 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
-        const metaImage = image
-          ? `${data.site.siteMetadata.siteUrl}/${image}`
-          : null
         const url = `${data.site.siteMetadata.siteUrl}${slug}`
-
+        const metaImage = image
+          ? `${data.site.siteMetadata.siteUrl}${image}`
+          : `${data.site.siteMetadata.siteUrl}${
+              data.defaultImage.childImageSharp.fixed.src
+            }`
         return (
           <Helmet
             htmlAttributes={{
@@ -35,6 +36,10 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
                 name: `description`,
                 content: metaDescription,
               },
+              {
+                name: `image`,
+                content: metaImage,
+              },
               { property: 'og:url', content: url },
               {
                 property: `og:title`,
@@ -43,6 +48,10 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
               {
                 property: `og:description`,
                 content: metaDescription,
+              },
+              {
+                property: `og:image`,
+                content: metaImage,
               },
               {
                 property: `og:type`,
@@ -64,6 +73,10 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
                 name: `twitter:description`,
                 content: metaDescription,
               },
+              {
+                name: `twitter:image`,
+                content: metaImage,
+              },
             ]
               .concat(
                 keywords.length > 0
@@ -73,20 +86,6 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
                     }
                   : []
               )
-              .concat(
-                metaImage
-                  ? [
-                      {
-                        property: 'og:image',
-                        content: metaImage,
-                      },
-                      {
-                        name: 'twitter:image',
-                        content: metaImage,
-                      },
-                    ]
-                  : []
-              )
               .concat(meta)}
           >
             <link
@@ -94,6 +93,10 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
               href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
               integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
               crossorigin="anonymous"
+            />
+            <meta
+              name="google-site-verification"
+              content="NJJzXpUILzQr4SeGuVIvNkFk6eE_heE9DTXlVHyAq-M"
             />
           </Helmet>
         )
@@ -124,6 +127,13 @@ export default SEO
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
+    defaultImage: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      childImageSharp {
+        fixed(width: 50, height: 50) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     site {
       siteMetadata {
         title
