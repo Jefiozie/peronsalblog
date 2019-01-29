@@ -11,26 +11,15 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
         const metaDescription =
           description || data.site.siteMetadata.description
         const url = `${data.site.siteMetadata.siteUrl}${slug}`
-        const metaImage = image
-          ? `${data.site.siteMetadata.siteUrl}${image}`
-          : `${data.site.siteMetadata.siteUrl}${
-              data.defaultImage.childImageSharp.fixed.src
-            }`
+
+        const metaImage = `${data.site.siteMetadata.siteUrl}${image ||
+          data.defaultImage.childImageSharp.fixed.src}`
+
         return (
           <Helmet
             htmlAttributes={{
               lang,
             }}
-            {...(title
-              ? {
-                  titleTemplate: `%s — ${data.site.siteMetadata.title}`,
-                  title,
-                }
-              : {
-                  title: `${
-                    data.site.siteMetadata.title
-                  } — A blog by Jeffrey Bosch`,
-                })}
             meta={[
               {
                 name: `description`,
@@ -77,6 +66,10 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
                 name: `twitter:image`,
                 content: metaImage,
               },
+              {
+                name: `google-site-verification`,
+                content: `NJJzXpUILzQr4SeGuVIvNkFk6eE_heE9DTXlVHyAq-M`,
+              },
             ]
               .concat(
                 keywords.length > 0
@@ -93,10 +86,6 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
               href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
               integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
               crossorigin="anonymous"
-            />
-            <meta
-              name="google-site-verification"
-              content="NJJzXpUILzQr4SeGuVIvNkFk6eE_heE9DTXlVHyAq-M"
             />
           </Helmet>
         )
