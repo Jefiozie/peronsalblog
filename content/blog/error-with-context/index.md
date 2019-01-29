@@ -50,5 +50,6 @@ The output of the code snippet above looks something like the example below:
   "message": "Error 1"
 }
 ```
+
 \
 Hope you learned something today! 👍

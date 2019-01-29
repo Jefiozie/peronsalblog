@@ -3,7 +3,7 @@ module.exports = {
     title: `JLog`,
     author: `Jeffrey Bosch`,
     description: `Personal blog by Jeffrey Bosch.`,
-    siteUrl: `https://jefiozie.github.io/`,
+    siteUrl: `https://jefiozie.github.io`,
     social: {
       twitter: `jefiozie`,
     },
@@ -80,5 +80,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
   ],
 }
