@@ -1,36 +1,32 @@
 import React from 'react'
-import Link from "gatsby-link"
-import { rhythm, scale } from "../utils/typography"
+import Link from 'gatsby-link'
+import { rhythm, scale } from '../utils/typography'
 const _ = require(`lodash`)
 
 const TagsSection = ({ tags }) => {
-    if (!tags) return null
-    const tagLinks = tags.map((tag, i) => {
-        const divider =
-            i < tags.length - 1 &&
-            <span>
-                {` | `}
-            </span>
-        return (
-            <span key={tag}>
-                <Link to={`/tags/${_.kebabCase(tag)}`}>
-                    {tag}
-                </Link>
-                {divider}
-            </span>
-        )
-    })
+  if (!tags) return null
+  const tagLinks = tags.map((tag, i) => {
+    const divider = i < tags.length - 1 && <span>{` | `}</span>
     return (
-        <em
-            style={{
-                ...scale(-1 / 5),
-                display: `block`,
-                marginBottom: rhythm(1),
-            }}
-        >
-            Tagged with {tagLinks}
-        </em>
+      <i class="fas fa-tag" style={{ color: `#2bbc8a`, padding: `4px` }} key={tag}>
+        {`  `}
+        <Link to={`/tags/${_.kebabCase(tag)}`}>{tag}</Link>
+        {divider}
+      </i>
     )
+  })
+  return (
+    <em
+      style={{
+        ...scale(-1 / 5),
+        display: `block`,
+        marginBottom: rhythm(1),
+      }}
+    >
+      {/* Tagged with  */}
+      {tagLinks}
+    </em>
+  )
 }
 
-export default TagsSection 
+export default TagsSection
