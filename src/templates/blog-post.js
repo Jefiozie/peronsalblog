@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
+import TagsSection from "../components/tags-section"
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
@@ -19,7 +20,7 @@ class BlogPostTemplate extends React.Component {
           slug={post.fields.slug}
         />
         <h1>{post.frontmatter.title}</h1>
-        <p
+        <p  
           style={{
             ...scale(-1 / 5),
             display: `block`,
@@ -32,6 +33,7 @@ class BlogPostTemplate extends React.Component {
           <i className="far fa-clock" />
           {` - ${post.timeToRead} min read`}
         </p>
+        <TagsSection tags={post.frontmatter.tags} />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -39,6 +41,7 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <Bio />
+        
 
         <ul
           style={{
@@ -95,6 +98,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
       }
       fields {
         slug
