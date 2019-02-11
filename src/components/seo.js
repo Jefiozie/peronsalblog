@@ -20,6 +20,7 @@ function SEO({ meta, image, title, keywords, lang, description, slug }) {
             htmlAttributes={{
               lang,
             }}
+              title={title}
             meta={[
               {
                 name: `description`,

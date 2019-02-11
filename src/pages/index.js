@@ -15,11 +15,10 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO />
+        <SEO title={siteTitle}/>
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
-          console.error(node.frontmatter)
           return (
             <div key={node.fields.slug}>
               <h3
