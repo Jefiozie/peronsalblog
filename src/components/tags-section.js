@@ -9,7 +9,7 @@ const TagsSection = ({ tags }) => {
     const divider = i < tags.length - 1 && <span>{` | `}</span>
     return (
       <i
-        class="fas fa-tag"
+        className="fas fa-tag"
         style={{ color: `#2bbc8a`, padding: `4px` }}
         key={tag}
       >

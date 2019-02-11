@@ -1,4 +1,4 @@
-module.exports = {
+const cfg = {
   siteMetadata: {
     title: `Blog`,
     author: `Jeffrey Bosch`,
@@ -83,3 +83,14 @@ module.exports = {
     `gatsby-plugin-sitemap`,
   ],
 }
+if (process.env.CONTEXT !== 'production') {
+  const draftsCfg = {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `drafts`,
+      path: `${__dirname}/drafts`,
+    },
+  }
+  cfg.plugins.push(draftsCfg)
+}
+module.exports = cfg
