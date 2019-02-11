@@ -5,6 +5,7 @@ import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
+import TagsSection from "../components/tags-section"
 
 class BlogIndex extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class BlogIndex extends React.Component {
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
+          console.error(node.frontmatter)
           return (
             <div key={node.fields.slug}>
               <h3
@@ -32,7 +34,7 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-
+              <TagsSection tags={node.frontmatter.tags} />
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </div>
           )
@@ -62,6 +64,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            tags
           }
         }
       }

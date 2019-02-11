@@ -1,6 +1,7 @@
 ---
 title: '#TIL: Error handling with debug context'
 date: '2019-01-23T13:40:16'
+tags: ['angular']
 ---
 
 Today I've implemented a custom **ErrorHandler** by using the [ErrorHandler](https://angular.io/api/core/ErrorHandler) of Angular. The reason I’m implementing a custom handler is for the extra information I would like it to send when running it on a _test enviroment_. When a errors occurs, I would like to see some extra details. I prefer to see on which component the error occurred and what the data was at that time.

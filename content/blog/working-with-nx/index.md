@@ -1,6 +1,7 @@
 ---
 title: '#TIL: Working with NX'
 date: '2019-01-14T13:40:16'
+tags: ['angular', 'NX']
 ---
 
 Today I upgraded one of our application to the most recent version NX. The upgrade itself was challenging as we are on a older version of NX. But after a couple of hours fixing some problems we where running on version `7.1.1`.
