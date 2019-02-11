@@ -8,9 +8,13 @@ const TagsSection = ({ tags }) => {
   const tagLinks = tags.map((tag, i) => {
     const divider = i < tags.length - 1 && <span>{` | `}</span>
     return (
-      <i class="fas fa-tag" style={{ color: `#2bbc8a`, padding: `4px` }} key={tag}>
+      <i
+        class="fas fa-tag"
+        style={{ color: `#2bbc8a`, padding: `4px` }}
+        key={tag}
+      >
         {`  `}
-        <Link to={`/tags/${_.kebabCase(tag)}`}>{tag}</Link>
+        {tag}
         {divider}
       </i>
     )
