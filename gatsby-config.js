@@ -1,3 +1,5 @@
+const dotenv = require('dotenv')
+
 const cfg = {
   siteMetadata: {
     title: `Blog`,
@@ -83,6 +85,7 @@ const cfg = {
     `gatsby-plugin-sitemap`,
   ],
 }
+
 if (process.env.CONTEXT !== 'production') {
   const draftsCfg = {
     resolve: `gatsby-source-filesystem`,
