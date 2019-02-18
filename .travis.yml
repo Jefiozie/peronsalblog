@@ -12,13 +12,6 @@ node_js:
   - '10'
 
 script:
+  - yarn
   - yarn build
-deploy:
-  provider: pages
-  skip-cleanup: true
-  keep-history: true
-  github-token: $GITHUB_TOKEN
-  local-dir: public
-  target-branch: master
-  on:
-    branch: master
+  - yarn deploy

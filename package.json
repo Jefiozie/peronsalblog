@@ -60,6 +60,6 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "deploy": "gatsby build && gh-pages -d public -r https://github.com/Jefiozie/jefiozie.github.io.git -b master"
+    "deploy": "gh-pages -d public -r $GITHUB_TOKEN@$GITHUB_URI -b master"
   }
 }
