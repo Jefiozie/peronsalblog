@@ -6,17 +6,17 @@ author: Jeffrey Bosch
 date: 2019-06-05T17:33:41.010Z
 ---
 
-For the past couple of weeks, I've been working on a "Design System" that is using Stencil. Today I want to share some basics on how I build a drawer with Stencil, with you and with the community 🙏🏻.
+For the past couple of weeks, I've been working on a "Design System" that is using Stencil. Today I want to share some basics on how I build a drawer with Stencil, with you, the community 🙏🏻.
 
 ## Why do I use Stencil
 
-One of my main reasons is that it will provide you a way to build web components such as all "major" frontend frameworks do. They are having their own compiler, documentation generators and can handle sass,less or css in a easy way. Secondly I like the way you can build a design system without having a "core" framework. With this approach it can be used in any Javascript framework. As I'm working in a space where not only Angular or React is being used, this will help gaining a common ground on how specific patterns or components look and feel.
+One of my main reasons is that it will provide you a way to build web components such as all "major" frontend frameworks do. They are having their own compiler, documentation generators and can handle sass, less or CSS in an easy way. Secondly, I like the way you can build a design system without having a "core" framework. With this approach, it can be used in any Javascript framework. As I'm working in a space where not only Angular or React is being used, this will help to gain common ground on how specific patterns or components look and feel.
 
 ## What is a drawer
 
-A drawer is a component, designed to add collapsible side content (often navigation) alongside some content. Further in this article you will see the end result of our drawer (*that won't be a perfectly styled example*😆) .
+A drawer is a component, designed to add collapsible side content (often navigation) alongside some content. Further, in this article, you will see the end result of our drawer (*that won't be a perfectly styled example*😆).
 
-## Architecture of the drawer
+## The architecture of the drawer
 
 Our drawer has three main parts:
 
@@ -26,13 +26,13 @@ Our drawer has three main parts:
 - A slot for the drawer content
 - A slot for the content
 
-The container will serve as a wrapper. It will help us with the styling of our internal parts. The content slot is our placeholder for the content that will served in the slot. Often this will be navigation. Finally we have a slot for application content. Here you will provide the main content of your application.
+The container will serve as a wrapper. It will help us with the styling of our internal parts. The content slot is our placeholder for the content that will be served in the slot. Often this will be navigation. Finally, we have a slot for application content. Here you will provide the main content of your application.
 
 ## Project setup
 
 As the focus of this article is on creating a drawer container I will provide a brief introduction on setting up a new project.
 
-First we are going to create a new Stencil project, with some simple steps provided by the [Getting Starred of Stencil](https://stenciljs.com/docs/getting-started)
+First, we are going to create a new Stencil project, with some simple steps provided by the [Getting Starred of Stencil](https://stenciljs.com/docs/getting-started)
 
 Create a new project:
 
@@ -46,7 +46,7 @@ You will be prompt to choose a project type, choose `component`
 ```bash
 ? Pick a starter › - Use arrow-keys. Return to submit.
 
-❯  ionic-pwa     Everything you need to build fast, production ready PWAs
+❯  ionic-pwa     Everything you need to build fast, production-ready PWAs
    app           Minimal starter for building a Stencil app or website
    component     Collection of web components that can be used anywhere
 ```
@@ -77,8 +77,8 @@ export class MyComponent {
 
 &nbsp;
 
-First we setup some internal data with the use of `@State`. When changing the `State` property it will cause the components render function to be called again.
-With this we are going to toggle a css class.
+First, we set up some internal data with the use of `@State`. When changing the `State` property it will cause the components to render again.
+With this, we are going to toggle a CSS class.
 
 ```typescript
 import { Component, Host, h, State, Method } from '@stencil/core'
@@ -138,7 +138,7 @@ export class MyComponent {
 
 &nbsp;
 
-In this last part we defined the html template. Earlier in this article I said we would toggle some css classes based on the `State` property `open`. Now you can see what I meant with this. When the property `open` equals `true` the `open` class will be added to the div, similar behavior will be on the `content div` as shown in the code.
+In this last part, we defined the HTML template. Earlier in this article, I said we would toggle some CSS classes based on the `State` property `open`. Now you can see what I meant with this. When the property `open` equals `true` the `open` class will be added to the div, similar behavior will be on the `content div` as shown in the code.
 
 ![Drawer outside of the view](outside_of_view.png)
 
@@ -195,15 +195,15 @@ Now open the `my-component.css` file and replace the code with:
 &nbsp;
 
 
-We will focus ourselves on the `open` and `left` behaviors. In our `drawer` class we have defined `transform: translate3d(-100%, 0, 0);`. This will place our div out of the view. When we append the `open` class we will set `transform` to `none`, now we have our div back on the screen.
+We will focus on the `open` and `left` behaviors. In our `drawer` class we have defined `transform: translate3d(-100%, 0, 0);`. This will place our div out of the view. When we append the `open` class we will set `transform` to `none`, now we have our div back on the screen.
 
 Our other focus point is the `left` class. Because the width of our drawer is fixed at `280px` we can use `margin-left` to "slide" to the left when this class is appended.
 
 ## Putting it all together
 
-Now that we have all parts together we have to do one more thing. When we created our new project `Stencil` provides us with a `index.html` within this file it has already created all thing for the "example" component.
+Now that we have all the parts together we have to do one more thing. When we created our new project `Stencil` provides us with an `index.html` within this file it has already created all thing for the "example" component.
 
-Yet because we made changes we should reflect these changes in the `index.html` file. To speed thing up copy the code below and replace this in your `index.html` file.
+Yet because we made changes we should reflect these changes in the `index.html` file. To speed things up copy the code below and replace this in your `index.html` file.
 
 ```html
 <!DOCTYPE html>
@@ -253,13 +253,13 @@ Yet because we made changes we should reflect these changes in the `index.html` 
 
 &nbsp;
 
-What did we change? We have added a *unsorted list* that will be placed in slot: `drawer-content` and we have a `div` that will be placed in slot: `content`. To toggle our drawer we have added a simple button that `on-click` will call the `toggleDrawer` method on our `drawer`
+What did we change? We have added an *unsorted list* that will be placed in slot: `drawer-content` and we have a `div` that will be placed in slot: `content`. To toggle our drawer we have added a simple button that `on-click` will call the `toggleDrawer` method on our `drawer`
 
 
 ## Summary
 
-So what did we do in summary. We have created a simple drawer that slides out of the view. We have created a drawer with basic styling that can be enhanced to your own needs.
-The great thing is it that we can use this drawer in **ANY** frontend application that is using Vanilla JS, Angular, React or Vue etc.
+So what did we do in summary? We have created a simple drawer that slides out of the view. We have created a drawer with basic styling that can be enhanced to your own needs.
+The great thing is it that we can use this drawer in **ANY** frontend application that is using Vanilla JS, Angular, React or Vue, etc.
 
 To see the full source have a look at [this repo](MY PUBLISHED REPO)
 
