@@ -255,7 +255,6 @@ Yet because we made changes we should reflect these changes in the `index.html` 
 
 What did we change? We have added an *unsorted list* that will be placed in slot: `drawer-content` and we have a `div` that will be placed in slot: `content`. To toggle our drawer we have added a simple button that `on-click` will call the `toggleDrawer` method on our `drawer`
 
-
 ## Summary
 
 So what did we do in summary? We have created a simple drawer that slides out of the view. We have created a drawer with basic styling that can be enhanced to your own needs.
@@ -264,3 +263,11 @@ The great thing is it that we can use this drawer in **ANY** frontend applicatio
 To see the full source have a look at [this repo](MY PUBLISHED REPO)
 
 I hope this article inspired you, gave you some insights on how to build a component with the use of **Stencil** and have had some fun!😁
+
+## A Thank you
+
+At last, a thank you to some people how reviewed my article or inspire me.
+
+- [Wes Grimes (@wesgrimes)](https://twitter.com/wesgrimes)
+- [Romulo Cintra (@romulocintra)](https://twitter.com/romulocintra)
+- [Wassim Chegman (@manekinekko)](https://twitter.com/manekinekko)
