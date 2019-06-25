@@ -8,10 +8,6 @@ date: 2019-06-05T17:33:41.010Z
 
 For the past couple of weeks, I've been working on a "Design System" that is using Stencil. Today I want to share some basics on how I build a drawer with Stencil, with you, the community 🙏🏻.
 
-## Why do I use Stencil
-
-One of my main reasons is that it will provide you a way to build web components such as all "major" frontend frameworks do. They are having their own compiler, documentation generators and can handle sass, less or CSS in an easy way. Secondly, I like the way you can build a design system without having a "core" framework. With this approach, it can be used in any Javascript framework. As I'm working in a space where not only Angular or React is being used, this will help to gain common ground on how specific patterns or components look and feel.
-
 ## What is a drawer
 
 A drawer is a component, designed to add collapsible side content (often navigation) alongside some content. Further, in this article, you will see the end result of our drawer (*that won't be a perfectly styled example*😆).
