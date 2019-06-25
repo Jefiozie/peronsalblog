@@ -256,7 +256,7 @@ What did we change? We have added an *unsorted list* that will be placed in slot
 So what did we do in summary? We have created a simple drawer that slides out of the view. We have created a drawer with basic styling that can be enhanced to your own needs.
 The great thing is it that we can use this drawer in **ANY** frontend application that is using Vanilla JS, Angular, React or Vue, etc.
 
-To see the full source have a look at [this repo](MY PUBLISHED REPO)
+To see the full source have a look at [this repo](https://github.com/Jefiozie/stencil-drawer)
 
 I hope this article inspired you, gave you some insights on how to build a component with the use of **Stencil** and have had some fun!😁
 
