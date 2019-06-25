@@ -262,8 +262,7 @@ I hope this article inspired you, gave you some insights on how to build a compo
 
 ## A Thank you
 
-At last, a thank you to some people how reviewed my article or inspire me.
+At last, a thank you to some people how reviewed my article
 
 - [Wes Grimes (@wesgrimes)](https://twitter.com/wesgrimes)
 - [Romulo Cintra (@romulocintra)](https://twitter.com/romulocintra)
-- [Wassim Chegman (@manekinekko)](https://twitter.com/manekinekko)
