@@ -18,7 +18,7 @@ An Angular Builder is a function that will be executed by using a specific Angul
 In Angular CLI version 8.3 the Angular team added a new CLI command: `ng deploy`
 The existing builder APIs are still used, but the usage has been simplified.
 It has a very short syntax, because by default it will deploy the default project in the workspace.
-And the most important point: It is an invitation to the community to standardise deployments under the umbrella of the Angular CLI!
+And the most important point: It is an invitation to the community to standardize deployments under the umbrella of the Angular CLI!
 
 # Why I created this Angular Builder
 
