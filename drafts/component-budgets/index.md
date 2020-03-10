@@ -11,55 +11,55 @@ Before we are going to look at the new budget that recently has been added to th
 
 The official [documentation](https://angular.io/guide/build#configure-size-budgets) says:
 
-> As applications grow in functionality, they also grow in size. The CLI allows you to set size thresholds in your configuration to ensure that parts of your application stay within size boundaries that you define.
+>As applications grow in functionality, they also grow in size. The CLI allows you to set size thresholds in your configuration to ensure that parts of your application stay within size limit that you define.
 
-In other words, bundles are the set of compiled JavaScript files, which are produced by the build process. Angular Budgets allow us to set a threshold around the size of these bundles. With the help of Angular Budgets, we can easily define a condition where we would expect a warning or error threshold if the size of a bundle increases. When an error is provided our build will fail with a bundle error.
+In other words, bundles are the set of compiled JavaScript files, which are produced by the build process. Angular Budgets allow us to set a threshold around the size of these bundles. With the help of Angular Budgets, we can easily define a condition where we would expect a warning or error if the size of a bundle crosses the threshold. When an error is raised our build will fail with a bundle error.
 
 
 ## The new type of budget on the block:
 
-With the release of Angular CLI version 9.x, a new budget type was introduced. This type is being called the [`anyComponentStyle`][Anycomponent_budget]
+With the release of Angular CLI version 9.x, a new budget type is introduced. This type is called [`anyComponentStyle`][Anycomponent_budget]
 
 ## How will this budget help me?
 
-Good question, when we develop an application (or library) our bundle sizes will increase. This is how the development lifecycle is and always will be. However, we like to have them as small as possible and that is where budgets come into play. Where the regular budgets will look at our JavaScript bundles, the `anyComponentStyle` will look at our **individual** component CSS files. 
+Good question, when we develop an application (or library) our bundle sizes will increase. This is how the development lifecycle is and always will be. However, we like to have them as small as possible and here is where budgets come into play. Where the regular budgets will look at our JavaScript bundles the `anyComponentStyle` will look at our **individual** component CSS files. 
 
-Some interesting things to know about the rules that apply with this budget:
+Some good things to know about the rules that apply with this budget:
 
-* The budget will throw a warning or an error if any component has styles bigger than the configured threshold, but it will **NOT** raise any warning or error if the global style is _HUGE_.
+* The budget will throw an error if any component has styles bigger than 6kb, but it will **NOT** raise any warning if the global style is _HUGE_.
 * The budget will **only** check individual components
-* At this moment it only supports CSS but there is a [PR][PR_Sass] incoming to support other extensions as well.
+* At this moment it only supports sass but there is a [PR][PR_Sass] incoming
 
 
 ## How is the new budget type defined
 
-Previously, the `angular.json` contained a default budget rule like:
+Previously the `angular.json` contains a default budget rule like:
 ```json
 "budgets": [
-{
-  "type": "initial",
-  "maximumWarning": "2mb",
-  "maximumError": "5mb"
-}
-]
+            {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+            }
+          ]
 ```
-When migrating to the new version of the Angular CLI, you will find a new budget added to the `angular.json`, which looks like:
+When migrating to the new version of the Angular CLI, you will find a new budget added to the `angular.json`, it looks like:
 
 ```json
 "budgets": [
-{
-  "type": "initial",
-  "maximumWarning": "2mb",
-  "maximumError": "5mb"
-},
-{
-  "type": "anyComponentStyle",
-  "maximumWarning": "6kb",
-  "maximumError": "10kb"
-}
-]
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              },
+                {
+                "type": "anyComponentStyle",
+                "maximumWarning": "6kb",
+                "maximumError": "10kb"
+              }
+           ]
 ```
-This new definition is where you can set the constraints for a warning or error message when a component's CSS file is exceeding this size.
+This new definition is where you can set the constrains for a warning or error message when a component CSS file is exceeding this size.
 
 ## Thank you!
 
