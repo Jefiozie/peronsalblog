@@ -1,6 +1,6 @@
 ---
 title: 'A new type of Angular budget on the block'
-date: '2020-03-03T13:40:16'
+date: '2020-03-10T13:40:16'
 tags: ['Angular', 'CSS', 'Angular CLI']
 ---
 
@@ -64,6 +64,11 @@ This new definition is where you can set the constraints for a warning or error 
 ## Thank you!
 
 I hope you enjoyed this article! I would appreciate if you would share this article to spread the word around this new cool budget!
+Also big thanks for some great reviewers:
+
+* [Frederik Prijck](https://twitter.com/frederikprijck)
+* [Santosh Yadav](https://twitter.com/SantoshYadavDev)
+* [Sam Vloeberghs](https://twitter.com/samvloeberghs)
 
 Please, don’t hesitate to ping me if you have any questions around Angular via Twitter [@jefiozie][@jefiozie]. 
 
